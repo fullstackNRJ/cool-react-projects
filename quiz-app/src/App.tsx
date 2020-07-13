@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import {fetchQuizQuestions, Difficulty, QuestionState} from './api';
 import QuizCard from './components/quizcard';
-import Dropdown from 'react-dropdown';
-import 'react-dropdown/style.css';
+import DropDown from './components/dropdown';
 
 
 
@@ -14,10 +13,11 @@ export type AnswerObject = {
 }
 
 const categories = [
-  'Sports', 'Mythology'
+  {option:'Sports', value:22}, 
+  {option:'Mythology', value:23}
 ]
 
-const level = ['EASY', 'MEDIUM', ] 
+const level = [{option:'Select difficulty'},{option:'EASY', value:'EASY'}, {option:'MEDIUM', value:'MEDIUM'},{option:'HARD', value:'HARD'}] 
 
 const App : React.FC = () => {
   
@@ -27,19 +27,32 @@ const App : React.FC = () => {
   const [userAnswers, setUserAnswers] = useState<AnswerObject[]>([]);
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
-
+  const [difficulty_level, setdifficuly_level] = useState(Difficulty.MEDIUM);
+  const [category, setCategory] = useState(11);
   const TOTAL_QUESTIONS = 10
   //console.log(fetchQuizQuestions(10, Difficulty.EASY,21))
 
   const startTrivia = async () =>{
     setLoading(true)
     setGameOver(false)
-    const newQuestions = await fetchQuizQuestions(TOTAL_QUESTIONS,Difficulty.MEDIUM,20)
+    const newQuestions = await fetchQuizQuestions(TOTAL_QUESTIONS,difficulty_level,category)
     setQuestions(newQuestions)
     setScore(0)
     setUserAnswers([])
     setNumber(0)
     setLoading(false)
+  }
+
+  const updateDifficulty_level = (e:React.MouseEvent<HTMLButtonElement>) =>{
+    const {name, value} = e.target
+    console.log('name', name, 'value :', value)
+    setdifficuly_level(value)
+    console.log('difficulty', difficulty_level)
+  }
+
+  const updateCategory = (e:React.MouseEvent<HTMLButtonElement>) =>{
+    const {value} = e.target
+    setCategory(value)
   }
 
   const checkAnswer = (e:React.MouseEvent<HTMLButtonElement>) =>{
@@ -83,9 +96,8 @@ const App : React.FC = () => {
       <button className="start" onClick={startTrivia}>
         Start
       </button>
-
-      <Select></Select>
-      
+      <DropDown name="Difficulty" dropdowndata={level} handleChange={updateDifficulty_level} currentValue={difficulty_level} />
+      <DropDown name="Categories" dropdowndata={categories} handleChange={updateCategory} currentValue={category} />
       </div>
     ): null 
       }

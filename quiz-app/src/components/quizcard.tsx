@@ -3,7 +3,7 @@ import React from 'react'
 type Props = {
     questions: string;
     answers: string[];
-    callback: any;
+    callback: (e: React.MouseEvent<HTMLButtonElement>) => void;
     userAnswer: any;
     questionNbr: number;
     totalQuestions: number;
