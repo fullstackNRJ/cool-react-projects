@@ -20,7 +20,7 @@ const QuizCard: React.FC<Props> = ({ question, questionNbr, answers, userAnswer,
     Question : {questionNbr}/{totalQuestions}
     </p>
 
-    <p dangerouslySetInnerHTML= {{__html:question}}/>
+    <p className="animate-card" dangerouslySetInnerHTML= {{__html:question}}/>
     <div>
       {answers.map((answer) => (
         <>
@@ -30,7 +30,7 @@ const QuizCard: React.FC<Props> = ({ question, questionNbr, answers, userAnswer,
         userClicked={userAnswer?.answer === answer}
         >
           <button disabled={userAnswer ? true : false} value={answer} onClick={callback}>
-            <span dangerouslySetInnerHTML={{ __html: answer }} />
+            <span className="animate-card" dangerouslySetInnerHTML={{ __html: answer }} />
           </button>
         </ButtonWrapper>
       </>))}

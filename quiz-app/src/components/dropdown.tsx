@@ -15,6 +15,7 @@ const DropDown: React.FC<props> = ({name, dropdowndata, handleChange, currentVal
             value={currentValue}
             onChange={handleChange} 
             name={name}
+            aria-label="Select a category"
         >
         {dropdowndata.map((data)=>{
            return  <option value={data['value']}>{data['option']}</option>

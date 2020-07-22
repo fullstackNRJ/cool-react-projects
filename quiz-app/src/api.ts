@@ -1,10 +1,6 @@
 import { StyledInterface } from "styled-components"
 
-export enum Difficulty {
-    EASY ="easy",
-    MEDIUM = "medium",
-    HARD = "hard"
-}
+
 
 export type Question = {
     category: string;

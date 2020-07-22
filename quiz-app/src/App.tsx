@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { fetchQuizQuestions, Difficulty, QuestionState } from './api';
+import { fetchQuizQuestions, QuestionState } from './api';
 import QuizCard from './components/quizcard';
 import DropDown from './components/dropdown';
 import { Wrapper, GlobalStyle } from './App.styles'
@@ -11,11 +11,6 @@ export type AnswerObject = {
   correct: boolean;
   correctAnswer: string;
 }
-
-const categories = [
-  { option: 'Sports', value: 22 },
-  { option: 'Mythology', value: 23 }
-]
 
 
 const App: React.FC = () => {
@@ -121,3 +116,30 @@ const App: React.FC = () => {
 }
 
 export default App;
+
+const categories = [
+  { option: 'General Knowledge', value: 9 },
+  { option: 'Books', value: 10 },
+  { option: 'Movies', value: 11 },
+  { option: 'Music', value: 12 },
+  { option: 'Musicals & Theatre', value: 13 },
+  { option: 'Television', value: 14 },
+  { option: 'Video Games', value: 15 },
+  { option: 'Board Games', value: 16 },
+  { option: 'Science', value: 17 },
+  { option: 'Computers', value: 18 },
+  { option: 'Mathemetics', value: 19 },
+  { option: 'Mythology', value: 20 },
+  { option: 'Sports', value: 21 },
+  { option: 'Geography', value: 22 },
+  { option: 'History', value: 23 },
+  { option: 'Politics', value: 24 },
+  { option: 'Art', value: 25 },
+  { option: 'Celebrities', value: 26 },
+  { option: 'Animals', value: 27},
+  { option: 'Vehicles', value: 28 },
+  { option: 'Comics', value: 29 },
+  { option: 'Gadgets', value: 30 },
+  { option: 'Japnese Manga comics', value: 31 },
+  { option: 'Anime', value: 32 },
+]
