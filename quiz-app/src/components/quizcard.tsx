@@ -1,4 +1,5 @@
 import React from 'react'
+import { Wrapper, ButtonWrapper } from '../components/quizcard.styles';
 
 type Props = {
     questions: string;
@@ -13,7 +14,8 @@ type Props = {
 
 
 const QuizCard: React.FC<Props> = ({ question, questionNbr, answers, userAnswer, callback, totalQuestions }) => (
-    <div>
+   <Wrapper>
+   <div>
     <p>
     Question : {questionNbr}/{totalQuestions}
     </p>
@@ -21,14 +23,21 @@ const QuizCard: React.FC<Props> = ({ question, questionNbr, answers, userAnswer,
     <p dangerouslySetInnerHTML= {{__html:question}}/>
     <div>
       {answers.map((answer) => (
-        
+        <>
+        <ButtonWrapper
+        key={answer}
+        correct = {userAnswer?.correctAnswer === answer}
+        userClicked={userAnswer?.answer === answer}
+        >
           <button disabled={userAnswer ? true : false} value={answer} onClick={callback}>
             <span dangerouslySetInnerHTML={{ __html: answer }} />
           </button>
-        
-      ))}
+        </ButtonWrapper>
+      </>))}
     </div>  
-</div>)
+</div>
+</Wrapper>
+)
 
 
 export default QuizCard;

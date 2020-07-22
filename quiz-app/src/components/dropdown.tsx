@@ -1,4 +1,5 @@
 import React from 'react';
+import { Wrapper } from '../App.styles';
 
 type props = {
     name:string
@@ -9,7 +10,8 @@ type props = {
 
 const DropDown: React.FC<props> = ({name, dropdowndata, handleChange, currentValue}) => (
     <>
-        <select
+     <Wrapper>
+        <select className="category"
             value={currentValue}
             onChange={handleChange} 
             name={name}
@@ -18,6 +20,7 @@ const DropDown: React.FC<props> = ({name, dropdowndata, handleChange, currentVal
            return  <option value={data['value']}>{data['option']}</option>
         })}     
         </select>
+     </Wrapper>  
     </>
 )
 
