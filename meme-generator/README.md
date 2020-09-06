@@ -5,7 +5,7 @@
 
 
 
-
+A simple meme-generator built using React and deployed to gh-pages using actions.
 
 In the project directory, you can run:
 

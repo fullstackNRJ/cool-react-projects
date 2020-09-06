@@ -1,5 +1,3 @@
-import { StyledInterface } from "styled-components"
-
 
 
 export type Question = {
@@ -14,7 +12,6 @@ export type Question = {
 export type QuestionState = Question & {answers:string[]}
 
 export const fetchQuizQuestions = async (amount: number, category:number) =>{
-    console.log('diff', 'categ', category)
     const endpoint = `https://opentdb.com/api.php?amount=${amount}&category=${category}`
     const data = await (await fetch(endpoint)).json()
     console.log(data)
