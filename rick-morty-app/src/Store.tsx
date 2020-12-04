@@ -13,7 +13,7 @@ const reducer = (state: IState, { type, payload }: IAction): IState => {
         case 'FETCH_DATA':
             return { ...state, episodes: payload }
         case 'ADD_FAV':
-            return { ...state, favourites: payload }
+            return { ...state, favourites:[...state.favourites, payload] }
         case 'DEL_FAV':
             return { ...state, favourites: payload }
         default:

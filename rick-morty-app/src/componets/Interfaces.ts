@@ -12,6 +12,12 @@ export type CardProps = {
     episode : Episode,
     toggleFav : CallableFunction
 }
+
+export type EpisodeListProps = {
+    state: IState,
+    handleFavBtn : CallableFunction
+}
+
 export interface Episode {
     airdate: Date,
     airstamp: string,
