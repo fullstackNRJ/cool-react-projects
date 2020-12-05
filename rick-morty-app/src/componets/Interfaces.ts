@@ -9,13 +9,15 @@ export interface IAction {
 }
 
 export type CardProps = {
-    episode : Episode,
-    toggleFav : CallableFunction
+    episode: Episode,
+    state: IState,
+    dispatch: Function
 }
 
 export type EpisodeListProps = {
+    episodes: Array<Episode>,
     state: IState,
-    handleFavBtn : CallableFunction
+    dispatch: Function
 }
 
 export interface Episode {

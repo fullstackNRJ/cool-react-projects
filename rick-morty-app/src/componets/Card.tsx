@@ -1,7 +1,8 @@
 import React from 'react'
-import { CardProps } from './Interfaces';
+import { handleFavBtn } from '../Actions';
+import { CardProps, Episode } from './Interfaces';
 
-export default function Card({ episode, toggleFav }: CardProps): JSX.Element {
+export default function Card({ episode, state, dispatch }: CardProps): JSX.Element {
     const { name, season, number, image: { medium, original }, airdate, airstamp, runtime, summary } = episode;
 
     return (
@@ -14,7 +15,7 @@ export default function Card({ episode, toggleFav }: CardProps): JSX.Element {
                 <span>Duration : {runtime}</span>
             </section>
             <summary>{summary}</summary>
-            <button onClick={() => toggleFav(episode)}>{'Fav/UnFav'} {'<3'}</button>
+            <button onClick={() => handleFavBtn(episode, state, dispatch)}>{state.favourites.find((data: Episode) => data.id === episode.id) ? 'UnFav' : 'Fav'}</button>
         </div>
     )
 }

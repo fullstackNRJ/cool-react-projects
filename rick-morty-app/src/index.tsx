@@ -17,7 +17,6 @@ ReactDOM.render(
           <RouterPage pageComponent={<Home />} path="/" />
           <RouterPage pageComponent={<Favs />} path="/favs" />
         </App>
-
       </Router>
     </StoreProvider>
   </React.StrictMode>,
