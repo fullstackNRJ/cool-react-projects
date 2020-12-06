@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   MapContainer,
   TileLayer,
@@ -5,13 +6,13 @@ import {
   Popup,
 } from "react-leaflet";
 
+
 const Map = ({ center, zoom }) => {
   return (
     <MapContainer
-      className="map"
+    style={{ height: "100vh" }} 
       center={center}
       zoom={zoom}
-      style={{ height: "100%", width: "900px", position: "relative" }}
     >
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -23,7 +24,7 @@ const Map = ({ center, zoom }) => {
 
 Map.defaultProps = {
   center: [42.3265, -122.8756],
-  zoom: 10,
+  zoom: 6,
 };
 
 export default Map;
