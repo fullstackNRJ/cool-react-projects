@@ -1,23 +1,28 @@
-import React from 'react';
-import {
-  MapContainer,
-  TileLayer,
-  Marker,
-  Popup,
-} from "react-leaflet";
+import { marker } from "leaflet";
+import React from "react";
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import LocationMarker, { FireIcon } from "./LocationMarker";
 
+// define constants
+const NATURAL_EVENT_WILDFIRE = 8;
 
-const Map = ({ center, zoom }) => {
+const Map = ({ center, zoom, eventData }) => {
+  const markers = eventData.map((event, key) => {
+    if (event.categories[0].id === NATURAL_EVENT_WILDFIRE) {
+      const [lng, lat] = event.geometries[0].coordinates;
+      return (
+        <LocationMarker key={key} lng={lng} lat={lat} info={event.title} />
+      );
+    }
+  });
+
   return (
-    <MapContainer
-    style={{ height: "100vh" }} 
-      center={center}
-      zoom={zoom}
-    >
+    <MapContainer style={{ height: "100vh" }} center={center} zoom={zoom}>
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
+      {markers}
     </MapContainer>
   );
 };
