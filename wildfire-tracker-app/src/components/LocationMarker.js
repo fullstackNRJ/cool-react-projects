@@ -1,20 +1,18 @@
 import React from "react";
-import fireIcon from "@iconify/icons-mdi/fire-alert";
 import { Marker } from "react-leaflet";
 import L from "leaflet";
 import MarkerPopup from "./MarkerPopup";
+import fireIcon from "./fire.png";
+import iconShadow from "leaflet/dist/images/marker-shadow.png";
 
-export const FireIcon = new L.Icon({
+let DefaultIcon = L.icon({
   iconUrl: fireIcon,
-  iconRetinaUrl: require("../components/FireIcon.svg"),
-  iconAnchor: [32, 32],
-  popupAnchor: null,
-  shadowUrl: null,
-  shadowSize: null,
-  shadowAnchor: null,
+  shadowUrl: iconShadow,
   iconSize: [32, 32],
-  className: "leaflet-fire-icon",
+  shadowSize: [28, 28],
 });
+
+L.Marker.prototype.options.icon = DefaultIcon;
 
 const LocationMarker = ({ lat, lng, info }) => {
   return (

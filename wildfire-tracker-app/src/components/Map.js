@@ -1,7 +1,6 @@
-import { marker } from "leaflet";
 import React from "react";
-import { MapContainer, TileLayer, Marker } from "react-leaflet";
-import LocationMarker, { FireIcon } from "./LocationMarker";
+import { MapContainer, TileLayer } from "react-leaflet";
+import LocationMarker from "./LocationMarker";
 
 // define constants
 const NATURAL_EVENT_WILDFIRE = 8;

@@ -1,9 +1,10 @@
-import React from 'react'
+import fireLoader from './fireLoader.gif'
 
 const Loader = () => {
     return (
         <div className="loader">
-            <p>Loading ...</p>
+            <img src={fireLoader} alt='fireLoader'/>
+            <h2>Loading ...</h2>
         </div>
     )
 }
