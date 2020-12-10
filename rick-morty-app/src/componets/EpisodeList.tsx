@@ -9,7 +9,7 @@ export default function EpisodeList({ episodes, state, dispatch}: EpisodeListPro
     }
 
     return (
-        <div>
+        <div className="list">
             {episodes.map((episode: Episode, key: number) => {
                 return (<Card key={key} episode={episode} {...cardProps} />)
             })}

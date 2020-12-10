@@ -1,8 +1,7 @@
 import React from 'react'
-import { fetchAllEpisodes, handleFavBtn } from '../Actions';
-import { Episode } from '../componets/Interfaces';
+import { fetchAllEpisodes } from '../Actions';
 import { Store } from '../Store';
-import { IState } from '../componets/Interfaces';
+
 
 const EpisodeList = React.lazy(() => import('../componets/EpisodeList'))
 export default function Home() {
