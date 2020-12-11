@@ -14,14 +14,14 @@ body {
   justify-content: space-around;
   align-items: center;
   border-bottom: 2px solid black;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
-.links{
+.links {
   display: flex;
   justify-content: space-between;
   text-decoration: none;
-  gap : 10px;
+  gap: 10px;
 }
 .list {
   margin: 10px 100px;
@@ -33,8 +33,45 @@ body {
 .episode {
   padding: 30px;
   max-width: 35vh;
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.episode > h3 {
-  overflow-wrap: break-word;
+
+.wp-caption {
+  position: relative;
+  margin: 0;
+  padding: 1rem;
+}
+
+.wp-caption img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.wp-caption-text {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  color: #fff;
+  left: 0;
+  bottom: 0;
+  padding: 0.75em 1em;
+  font-weight: 700;
+  z-index: 2;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.7);
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.wp-caption:hover .wp-caption-text {
+  opacity: 1;
+}
+
+.da_info-block{
+  font-size: small;
+  
 }

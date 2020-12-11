@@ -7,13 +7,18 @@ export default function Card({ episode, state, dispatch }: CardProps): JSX.Eleme
 
     return (
         <div className='episode'>
-            <h3>{name}</h3>
-            <aside><span>Season : {season}</span><span>Ep : {number}</span></aside>
-            <img src={medium} alt="pic" />
-            <section>
-                {<span>Aired at : {airdate}</span>}
-                <span>Duration : {runtime}</span>
-            </section>
+            <aside><span>Season : {season} </span><span> Ep : {number}</span></aside>
+            <figure className="wp-caption">
+                <img className="poster" src={medium} alt={`S${season}E${number}_img`} />
+                <figcaption className="wp-caption-text">
+                    <h5>{name}</h5>
+                    <section className="da_info-block">
+                        {<div className="aa_info">Aired at : {new Date(airdate).toDateString()}</div>}
+    <div className="d_info">Duration : {runtime} {'min'}</div>
+                    </section>                   
+                </figcaption>
+            </figure>
+
             {/* <summary>{summary}</summary> */}
             <button onClick={() => handleFavBtn(episode, state, dispatch)}>{state.favourites.find((data: Episode) => data.id === episode.id) ? 'UnFav' : 'Fav'}</button>
         </div>
