@@ -6,6 +6,11 @@ const Main = () => {
   const [query, setQuery] = React.useState("");
   const [weatherData, setWeatherData] = React.useState({});
 
+  React.useEffect(() => {
+    const data = getWeather(query);
+    console.log("<><>><>", data);
+  }, [query]);
+
   const performSearch = async (e) => {
     if (e.key === "enter ") {
       const data = await getWeather(query);
