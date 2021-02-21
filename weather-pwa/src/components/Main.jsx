@@ -3,16 +3,18 @@ import { getWeather } from "../api/GetWeatherInfo";
 import WeatherCard from "./WeatherCard";
 
 const Main = () => {
-  const [query, setQuery] = React.useState("");
+  const [query, setQuery] = React.useState(null);
   const [weatherData, setWeatherData] = React.useState({});
 
-  React.useEffect(() => {
+ /*  React.useEffect(() => {
     const data = getWeather(query);
     console.log("<><>><>", data);
-  }, [query]);
+    setWeatherData(data);
+  }, [query]); */
 
   const performSearch = async (e) => {
-    if (e.key === "enter ") {
+    console.log('object,', e)
+    if (e.key === "Enter") {
       const data = await getWeather(query);
       setWeatherData(data);
     }
@@ -30,8 +32,10 @@ const Main = () => {
           onKeyPress={performSearch}
         />
       </div>
-      <WeatherCard weather={weatherData} />
-    </>
+     {
+     weatherData && <WeatherCard weather={weatherData} />
+     }
+      </>
   );
 };
 
