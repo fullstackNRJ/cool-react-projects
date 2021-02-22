@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
   border: 1px solid lightblue;
   border-radius: 20px;
   height: 100%;
+
   button {
     border-radius: 0 0 20px 20px;
   }
