@@ -10,10 +10,10 @@ function App() {
   useEffect(() => {
     const fetchImages = async () => {
       setLoading(true);
-      const items = await (
+      const images = await (
         await fetch(`https://picsum.photos/v2/list?page=${page}`)
       ).json();
-      setItems((prevItems) => prevItems.concat(items));
+      setItems((prevItems) => prevItems.concat(images));
       setLoading(false);
       console.log(items);
     };
@@ -49,7 +49,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">Infinite Scroll Photo Gallery</header>
-      {loading ? <h4>Fetching Images</h4> : <ImageGrid data={items} />}
+      {loading && <h4>Fetching Images</h4>}
+      <ImageGrid data={items} />
       <h3 className="loading" ref={loader}>
         Loading more ....
       </h3>
