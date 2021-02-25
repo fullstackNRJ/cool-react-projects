@@ -4,7 +4,7 @@ function Image({ id, url }) {
   return (
     <div className="image_wrapper">
       <li>
-        <img className="image" src={url} alt={id} />
+        <img className="_image" src={url} alt={id} />
       </li>
     </div>
   );

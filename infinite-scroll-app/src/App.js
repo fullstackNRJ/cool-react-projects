@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import "./App.css";
 import ImageGrid from "./components";
+import ScrollArrow from './components/ScrollToTop/index';
 
 function App() {
   const [items, setItems] = useState([]);
@@ -48,6 +49,7 @@ function App() {
 
   return (
     <div className="App">
+      <ScrollArrow/>
       <header className="App-header">Infinite Scroll Photo Gallery</header>
       {loading && <h4>Fetching Images</h4>}
       <ImageGrid data={items} />
