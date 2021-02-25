@@ -15,6 +15,7 @@
 
 .image_wrapper {
   width: 20%;
+  display: flex;
   border: 5px solid white;
 }
 
@@ -65,7 +66,7 @@ li {
 
 .scrollTop {
   position: fixed;
-  width: 50%;
+  width: 100%;
   bottom: 20px;
   align-items: center;
   height: 20px;
@@ -75,6 +76,7 @@ li {
   animation: fadeIn 0.3s;
   transition: opacity 0.4s;
   opacity: 0.5;
+ 
 }
 
 .scrollTop:hover {

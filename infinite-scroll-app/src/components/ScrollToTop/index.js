@@ -28,7 +28,12 @@ function ScrollToTop() {
       onClick={scrollToTop}
       style={{ height: 40, display: showScrollTop ? "flex" : "none" }}
     >
-      <img src={ArrowUp} alt={"up-arrow-icon"} loading="eager" />
+      <img
+        src={ArrowUp}
+        alt={"up-arrow-icon"}
+        loading="eager"
+        style={{ height: 80, width: 80 }}
+      />
     </div>
   );
 }
