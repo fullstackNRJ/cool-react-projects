@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 import Loader from './components/Loader';
-import ListView from './components';
+import ListView from './components/ListView';
+import PlayerCard from './components/PlayerCard'
 import { fetchDataFromServer } from './api';
 import { Player } from './models/Player';
 import Timeline from './components/Timeline';

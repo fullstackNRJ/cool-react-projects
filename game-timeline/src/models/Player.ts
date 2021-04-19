@@ -4,7 +4,7 @@ export interface Player {
     subtitle: string,
     company: string,
     description: string,
-    tags: Array<Tags>
+    //tags: Array<Tags>
 }
 
 interface Tags {

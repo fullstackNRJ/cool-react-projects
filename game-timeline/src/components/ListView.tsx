@@ -1,27 +1,7 @@
 import React from 'react'
-import { Player } from '../models/Player'
+import { Player } from '../models/Player';
+import PlayerCard from './PlayerCard';
 
-const PlayerCard = ({ company, title, subtitle, image, tags, description, }: Player) => {
-    return (
-        <div className="Container">
-            <div className="tags">{tags.join(' # ')}</div>
-            <div className="profile_pic">
-                <img src={image} alt="ppic"/>
-            </div>
-            <div className="profile_data">
-                <div className="row_one">
-                    <h3>Name : {title} </h3> <h3> LastName: {subtitle}</h3>
-                    <h3>Company : {company}</h3> <h3> NickName : {'-'}</h3>
-                </div>
-            </div>
-            <div className="player_description">
-                <p>
-                    {description}
-                </p>
-            </div>
-        </div>
-    )
-}
 
 const ListView = ({ data }: { data: Player[] }) => {
 
@@ -32,4 +12,4 @@ const ListView = ({ data }: { data: Player[] }) => {
     )
 }
 
-export default ListView
+export default ListView;
