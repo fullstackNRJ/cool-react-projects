@@ -5,6 +5,7 @@ export interface Player {
     company: string,
     description: string,
     //tags: Array<Tags>
+    date: number
 }
 
 interface Tags {

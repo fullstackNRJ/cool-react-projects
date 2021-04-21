@@ -20,6 +20,7 @@ export const fetchDataFromServer = (n = 1000) => {
             subtitle: faker.name.jobTitle(),
             company: faker.company.companyName(),
             description: faker.lorem.paragraph(),
+            date: faker.date.past(50).getFullYear(),
             //tags: [createTag(), createTag(), createTag()]
         });
     }
